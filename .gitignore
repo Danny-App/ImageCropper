@@ -3,3 +3,4 @@ venv/
 env/
 img/
 crop/
+.DS_Store
