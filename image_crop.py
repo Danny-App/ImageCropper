@@ -35,8 +35,10 @@ for file in files:
         result = cropper.crop(img_filename, True)
 
         # Write result into crop folder
-        cv2_status = cv2.imwrite(crop_filename, result)
+        cv2_status = cv2.imwrite(crop_filename.lower(), result)
         if cv2_status == True:
             print("%s file has been written to crop folder" % (file))
         else:
             print("Could not write %s file to crop folder" % (file))
+        # free up memory
+        result = None
